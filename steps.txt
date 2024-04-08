@@ -1,0 +1,5 @@
+dotnet new mvc -o ElissonFlix
+
+dotnet new sln --name ElissonFlix
+
+dotnet sln add ElissonFlix\ElissonFlix.csproj
