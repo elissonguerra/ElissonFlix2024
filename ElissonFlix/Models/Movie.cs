@@ -9,7 +9,7 @@ namespace ElissonFlix.Models;
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public uint Id { get; set; }
 
         [Display(Name = "Título Original")]
         [Required(ErrorMessage = "Por favor, informe o título original")]
@@ -46,5 +46,7 @@ namespace ElissonFlix.Models;
         public string HourDuration { get {
             return TimeSpan.FromMinutes(Duration).ToString(@"%h'h 'mm'min'");
         } }
+
+        public ICollection<MovieGenre> Genres { get; set; }
 
     }
