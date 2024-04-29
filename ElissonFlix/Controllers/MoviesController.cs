@@ -74,6 +74,7 @@ namespace ElissonFlix.Controllers
                     movie.Image = "\\img\\movies\\" + nomeArquivo;
                     await _context.SaveChangesAsync();
                 }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(movie);
@@ -100,7 +101,7 @@ namespace ElissonFlix.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("Id,OriginalTitle,Title,Synopsis,MovieYear,Duration,AgeRating,Image")] Movie movie)
+        public async Task<IActionResult> Edit(uint id, [Bind("Id,OriginalTitle,Title,Synopsis,MovieYear,Duration,AgeRating,Image")] Movie movie, IFormFile arquivo)
         {
             if (id != movie.Id)
             {
@@ -111,6 +112,18 @@ namespace ElissonFlix.Controllers
             {
                 try
                 {
+                    if (arquivo != null)
+                    {
+                        string nomeArquivo = movie.Id + Path.GetExtension(arquivo.FileName);
+                        string caminho = Path.Combine(_host.WebRootPath, "img\\movies");
+                        string novoArquivo = Path.Combine(caminho, nomeArquivo);
+                        using (var stream = new FileStream(novoArquivo, FileMode.Create))
+                        {
+                            arquivo.CopyTo(stream);
+                        }
+                        movie.Image = "\\img\\movies\\" + nomeArquivo;
+
+                    }
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }
