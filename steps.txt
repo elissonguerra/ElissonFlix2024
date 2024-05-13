@@ -30,3 +30,6 @@ dotnet-aspnet-codegenerator controller -name GenresController -m Genre -dc AppDb
 dotnet-aspnet-codegenerator controller -name MoviesController -m Movie -dc AppDbContext -outDir Controllers -udl 
 
 dotnet tool install --global
+
+
+
