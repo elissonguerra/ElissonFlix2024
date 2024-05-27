@@ -1,15 +1,15 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ElissonFlix.Models;
-using ElissonFlix.Data;
+using NanniFlix.Models;
+using NanniFlix.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ElissonFlix.Controllers;
+namespace NanniFlix.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly AppDbContext _context;
+    private readonly AppDbContext _context; 
 
     public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
@@ -20,9 +20,9 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         List<Movie> movies = _context.Movies
-        .Include(m => m.Genres)
-        .ThenInclude(mg => mg.Genre)
-        .ToList();
+            .Include(m => m.Genres)
+            .ThenInclude(mv => mv.Genre)
+            .ToList();
         return View(movies);
     }
 

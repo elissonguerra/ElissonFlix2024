@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ElissonFlix.Models;
+namespace NanniFlix.Models;
 
 [Table("MovieGenre")]
+
 public class MovieGenre
 {
     [Key, Column(Order = 1)]

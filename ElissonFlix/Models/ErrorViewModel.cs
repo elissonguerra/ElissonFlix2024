@@ -1,4 +1,4 @@
-namespace ElissonFlix.Models;
+namespace NanniFlix.Models;
 
 public class ErrorViewModel
 {

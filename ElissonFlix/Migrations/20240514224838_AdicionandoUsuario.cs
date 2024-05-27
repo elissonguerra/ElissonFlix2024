@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace ElissonFlix.Migrations
+namespace NanniFlix.Migrations
 {
     /// <inheritdoc />
     public partial class AdicionandoUsuario : Migration
@@ -291,8 +291,8 @@ namespace ElissonFlix.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "9b42a4cd-23fa-4447-9a94-fea63790b6a6", null, "Usuário", "USUÁRIO" },
-                    { "ea1e5322-e654-427c-970f-0cbed16703f2", null, "Administrador", "ADMINISTRADOR" }
+                    { "8a73bdf8-9739-45ef-8916-5e1775e7ebce", null, "Usuário", "USUÁRIO" },
+                    { "bc49d95a-e96d-4539-ac07-3fe4072abdb3", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -300,8 +300,8 @@ namespace ElissonFlix.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "14953fc9-61bf-4619-9c5e-8c6b45119033", 0, "11ef39c7-0ce7-4379-bbcc-d80765184401", "user@gmail.com", true, true, null, "USER@GMAIL.COM", "USER", "AQAAAAIAAYagAAAAENR964J2htpoy/GLs8LevnoUMTJ61SneUD17fw/MOOBa9bSq7iCKuhOTnUA3WEBD+A==", null, false, "8ec04297-58a4-492d-ac37-9f58fbd0d7c9", false, "User" },
-                    { "ef498775-b4e8-426d-9e3a-ee7d42368136", 0, "f08a7da4-7c5a-438c-b648-6fa21e760594", "admin@elissonflix.com", true, false, null, "ADMIN@ELISSONFLIX.COM", "ADMIN", "AQAAAAIAAYagAAAAENmfTGZDBAC74lpd0WQ4hM2nm5hlbpwhw8nQMdUW6dm6jmTeFXdwDLjJ17GFIlQfeA==", null, false, "f6f4653e-bf0e-47c2-a49c-3cd874560197", false, "Admin" }
+                    { "00bdd567-6396-49dd-a19c-6818ffca4eed", 0, "98bea8fe-d59e-4091-bdf9-cc9d2e956caf", "user@hotmail.com", true, true, null, "USER@HOTMAIL.COM", "USER", "AQAAAAIAAYagAAAAEJWdy9VaCsT5mOH5rTf0PfSzadqivjtTrmtZk9uSd09EMfK77YXS5w05korMYUMAqw==", null, false, "f3ac46af-9227-4a07-b814-2d5cade21b18", false, "User" },
+                    { "4ea15fa5-6e2e-4a51-b5ae-a0100642a745", 0, "1bfc8d85-b723-42a6-8601-33482360f1b6", "admin@nanniflix.com", true, false, null, "ADMIN@NANNIFLIX.COM", "ADMIN", "AQAAAAIAAYagAAAAEM341uOZEtQYKAQZW4Eti2u1dJcmOJtl6TLhOquCzs6M7BHUfhwbK4cGlmuwlV/YRQ==", null, false, "35fe0535-4fe4-4490-85f4-0077f06a2e24", false, "Admin" }
                 });
 
             migrationBuilder.InsertData(
@@ -309,8 +309,8 @@ namespace ElissonFlix.Migrations
                 columns: new[] { "AppUserId", "Birthday", "Name", "Photo" },
                 values: new object[,]
                 {
-                    { "14953fc9-61bf-4619-9c5e-8c6b45119033", new DateTime(2000, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fulaninho", null },
-                    { "ef498775-b4e8-426d-9e3a-ee7d42368136", new DateTime(1989, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Elisson Guerra", "/img/usuarios/avatar.png" }
+                    { "00bdd567-6396-49dd-a19c-6818ffca4eed", new DateTime(2008, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Visitante", "" },
+                    { "4ea15fa5-6e2e-4a51-b5ae-a0100642a745", new DateTime(1998, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "André Nanni", "" }
                 });
 
             migrationBuilder.InsertData(
@@ -318,9 +318,9 @@ namespace ElissonFlix.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "9b42a4cd-23fa-4447-9a94-fea63790b6a6", "14953fc9-61bf-4619-9c5e-8c6b45119033" },
-                    { "9b42a4cd-23fa-4447-9a94-fea63790b6a6", "ef498775-b4e8-426d-9e3a-ee7d42368136" },
-                    { "ea1e5322-e654-427c-970f-0cbed16703f2", "ef498775-b4e8-426d-9e3a-ee7d42368136" }
+                    { "8a73bdf8-9739-45ef-8916-5e1775e7ebce", "00bdd567-6396-49dd-a19c-6818ffca4eed" },
+                    { "8a73bdf8-9739-45ef-8916-5e1775e7ebce", "4ea15fa5-6e2e-4a51-b5ae-a0100642a745" },
+                    { "bc49d95a-e96d-4539-ac07-3fe4072abdb3", "4ea15fa5-6e2e-4a51-b5ae-a0100642a745" }
                 });
 
             migrationBuilder.CreateIndex(

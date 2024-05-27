@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ElissonFlix.Data;
-using ElissonFlix.Models;
+using NanniFlix.Data;
+using NanniFlix.Models;
 
-namespace ElissonFlix.Controllers
+namespace NanniFlix.Controllers
 {
     public class GenresController : Controller
     {

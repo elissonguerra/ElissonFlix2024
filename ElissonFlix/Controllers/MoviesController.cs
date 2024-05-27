@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ElissonFlix.Data;
-using ElissonFlix.Models;
+using NanniFlix.Data;
+using NanniFlix.Models;
 
-namespace ElissonFlix.Controllers
+namespace NanniFlix.Controllers
 {
     public class MoviesController : Controller
     {
@@ -62,6 +62,7 @@ namespace ElissonFlix.Controllers
             {
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
+
                 if (arquivo != null)
                 {
                     string nomeArquivo = movie.Id + Path.GetExtension(arquivo.FileName);
@@ -112,20 +113,25 @@ namespace ElissonFlix.Controllers
             {
                 try
                 {
-                    if (arquivo != null)
+                    if (ModelState.IsValid)
                     {
-                        string nomeArquivo = movie.Id + Path.GetExtension(arquivo.FileName);
-                        string caminho = Path.Combine(_host.WebRootPath, "img\\movies");
-                        string novoArquivo = Path.Combine(caminho, nomeArquivo);
-                        using (var stream = new FileStream(novoArquivo, FileMode.Create))
-                        {
-                            arquivo.CopyTo(stream);
-                        }
-                        movie.Image = "\\img\\movies\\" + nomeArquivo;
+                        _context.Add(movie);
+                        await _context.SaveChangesAsync();
 
+                        if (arquivo != null)
+                        {
+                            string nomeArquivo = movie.Id + Path.GetExtension(arquivo.FileName);
+                            string caminho = Path.Combine(_host.WebRootPath, "img\\movies");
+                            string novoArquivo = Path.Combine(caminho, nomeArquivo);
+                            using (var stream = new FileStream(novoArquivo, FileMode.Create))
+                            {
+                                arquivo.CopyTo(stream);
+                            }
+                            movie.Image = "\\img\\movies\\" + nomeArquivo;
+                            await _context.SaveChangesAsync();
+                        }
+                        _context.Update(movie);
                     }
-                    _context.Update(movie);
-                    await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {

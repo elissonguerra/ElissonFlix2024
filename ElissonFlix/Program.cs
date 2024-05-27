@@ -1,18 +1,19 @@
-using ElissonFlix.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NanniFlix.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-string conn = builder.Configuration.GetConnectionString("ElissonFlix");
+string conn = builder.Configuration.GetConnectionString("NanniFlix");
 var version = ServerVersion.AutoDetect(conn);
-
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseMySql(conn, version));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(opt => opt.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+    opt => opt.SignIn.RequireConfirmedAccount = false
+)
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
@@ -31,8 +32,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",

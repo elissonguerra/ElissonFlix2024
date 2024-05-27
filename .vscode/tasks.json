@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ElissonFlix.sln",
+                "${workspaceFolder}/NanniFlix.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/ElissonFlix.sln",
+                "${workspaceFolder}/NanniFlix.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/ElissonFlix.sln"
+                "${workspaceFolder}/NanniFlix.sln"
             ],
             "problemMatcher": "$msCompile"
         }
