@@ -1,10 +1,10 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using NanniFlix.Models;
-using NanniFlix.Data;
+using ElissonFlix.Models;
+using ElissonFlix.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace NanniFlix.Controllers;
+namespace ElissonFlix.Controllers;
 
 public class HomeController : Controller
 {

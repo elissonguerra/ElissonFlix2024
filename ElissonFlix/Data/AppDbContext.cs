@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using NanniFlix.Models;
+using ElissonFlix.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace NanniFlix.Data;
+namespace ElissonFlix.Data;
 
 public class AppDbContext : IdentityDbContext
 {
@@ -53,8 +53,8 @@ public class AppDbContext : IdentityDbContext
             List<IdentityUser> users = new(){
                 new IdentityUser(){
                     Id = Guid.NewGuid().ToString(),
-                    Email = "admin@nanniflix.com",
-                    NormalizedEmail = "ADMIN@NANNIFLIX.COM",
+                    Email = "admin@ElissonFlix.com",
+                    NormalizedEmail = "ADMIN@ElissonFlix.COM",
                     UserName = "Admin",
                     NormalizedUserName = "ADMIN",
                     LockoutEnabled = false,

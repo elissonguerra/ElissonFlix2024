@@ -3,9 +3,9 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
-using NanniFlix.ViewModels;
+using ElissonFlix.ViewModels;
 
-namespace NanniFlix.Controllers;
+namespace ElissonFlix.Controllers;
 
 public class AccountController : Controller
 {
@@ -92,5 +92,10 @@ public class AccountController : Controller
         {
             return false;
         }
+    }
+
+    public IActionResult Register()
+    {
+        return View();
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace NanniFlix.Migrations
+namespace ElissonFlix.Migrations
 {
     /// <inheritdoc />
     public partial class AdicionandoUsuario : Migration
@@ -301,7 +301,7 @@ namespace NanniFlix.Migrations
                 values: new object[,]
                 {
                     { "00bdd567-6396-49dd-a19c-6818ffca4eed", 0, "98bea8fe-d59e-4091-bdf9-cc9d2e956caf", "user@hotmail.com", true, true, null, "USER@HOTMAIL.COM", "USER", "AQAAAAIAAYagAAAAEJWdy9VaCsT5mOH5rTf0PfSzadqivjtTrmtZk9uSd09EMfK77YXS5w05korMYUMAqw==", null, false, "f3ac46af-9227-4a07-b814-2d5cade21b18", false, "User" },
-                    { "4ea15fa5-6e2e-4a51-b5ae-a0100642a745", 0, "1bfc8d85-b723-42a6-8601-33482360f1b6", "admin@nanniflix.com", true, false, null, "ADMIN@NANNIFLIX.COM", "ADMIN", "AQAAAAIAAYagAAAAEM341uOZEtQYKAQZW4Eti2u1dJcmOJtl6TLhOquCzs6M7BHUfhwbK4cGlmuwlV/YRQ==", null, false, "35fe0535-4fe4-4490-85f4-0077f06a2e24", false, "Admin" }
+                    { "4ea15fa5-6e2e-4a51-b5ae-a0100642a745", 0, "1bfc8d85-b723-42a6-8601-33482360f1b6", "admin@ElissonFlix.com", true, false, null, "ADMIN@ElissonFlix.COM", "ADMIN", "AQAAAAIAAYagAAAAEM341uOZEtQYKAQZW4Eti2u1dJcmOJtl6TLhOquCzs6M7BHUfhwbK4cGlmuwlV/YRQ==", null, false, "35fe0535-4fe4-4490-85f4-0077f06a2e24", false, "Admin" }
                 });
 
             migrationBuilder.InsertData(

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NanniFlix.Models;
+namespace ElissonFlix.Models;
 
 [Table("Movie")]
 public class Movie

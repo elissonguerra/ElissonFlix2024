@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NanniFlix.Data;
+using ElissonFlix.Data;
 
 #nullable disable
 
-namespace NanniFlix.Migrations
+namespace ElissonFlix.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -156,10 +156,10 @@ namespace NanniFlix.Migrations
                             Id = "4ea15fa5-6e2e-4a51-b5ae-a0100642a745",
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "1bfc8d85-b723-42a6-8601-33482360f1b6",
-                            Email = "admin@nanniflix.com",
+                            Email = "admin@ElissonFlix.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@NANNIFLIX.COM",
+                            NormalizedEmail = "ADMIN@ElissonFlix.COM",
                             NormalizedUserName = "ADMIN",
                             PasswordHash = "AQAAAAIAAYagAAAAEM341uOZEtQYKAQZW4Eti2u1dJcmOJtl6TLhOquCzs6M7BHUfhwbK4cGlmuwlV/YRQ==",
                             PhoneNumberConfirmed = false,
@@ -283,7 +283,7 @@ namespace NanniFlix.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.AppUser", b =>
+            modelBuilder.Entity("ElissonFlix.Models.AppUser", b =>
                 {
                     b.Property<string>("AppUserId")
                         .HasColumnType("varchar(255)");
@@ -321,7 +321,7 @@ namespace NanniFlix.Migrations
                         });
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.Genre", b =>
+            modelBuilder.Entity("ElissonFlix.Models.Genre", b =>
                 {
                     b.Property<sbyte>("Id")
                         .ValueGeneratedOnAdd()
@@ -339,7 +339,7 @@ namespace NanniFlix.Migrations
                     b.ToTable("Genre");
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.Movie", b =>
+            modelBuilder.Entity("ElissonFlix.Models.Movie", b =>
                 {
                     b.Property<uint>("Id")
                         .ValueGeneratedOnAdd()
@@ -379,7 +379,7 @@ namespace NanniFlix.Migrations
                     b.ToTable("Movie");
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.MovieGenre", b =>
+            modelBuilder.Entity("ElissonFlix.Models.MovieGenre", b =>
                 {
                     b.Property<uint>("MovieId")
                         .HasColumnType("int unsigned")
@@ -447,7 +447,7 @@ namespace NanniFlix.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.AppUser", b =>
+            modelBuilder.Entity("ElissonFlix.Models.AppUser", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "UserAccount")
                         .WithMany()
@@ -458,15 +458,15 @@ namespace NanniFlix.Migrations
                     b.Navigation("UserAccount");
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.MovieGenre", b =>
+            modelBuilder.Entity("ElissonFlix.Models.MovieGenre", b =>
                 {
-                    b.HasOne("NanniFlix.Models.Genre", "Genre")
+                    b.HasOne("ElissonFlix.Models.Genre", "Genre")
                         .WithMany("Movies")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NanniFlix.Models.Movie", "Movie")
+                    b.HasOne("ElissonFlix.Models.Movie", "Movie")
                         .WithMany("Genres")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -477,12 +477,12 @@ namespace NanniFlix.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.Genre", b =>
+            modelBuilder.Entity("ElissonFlix.Models.Genre", b =>
                 {
                     b.Navigation("Movies");
                 });
 
-            modelBuilder.Entity("NanniFlix.Models.Movie", b =>
+            modelBuilder.Entity("ElissonFlix.Models.Movie", b =>
                 {
                     b.Navigation("Genres");
                 });

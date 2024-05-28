@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace NanniFlix.ViewModels;
+namespace ElissonFlix.ViewModels;
 public class LoginVM
 {
     [Display(Name = "Email ou Nome de Usuário")]
@@ -15,4 +15,6 @@ public class LoginVM
     [Display(Name = "Manter Conectado?")]
     public bool RememberMe { get; set; } = false;
     public string ReturnUrl { get; set; }
+    
 }
+
